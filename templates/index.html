@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevSync | Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <div class="logo">DevSync.</div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="/portal"><button class="secondary-btn">Log In</button></a>
+          <a href="/pricing"><button class="cta-btn">Get Started</button></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="badge">MySQL Integrated</span>
+          <h1>Ship Your Projects Faster</h1>
+          <p>
+            The ultimate deployment platform for modern full-stack teams. Write
+            code, connect databases, and launch seamlessly.
+          </p>
+
+          <form id="leadForm" class="hero-form">
+            <input
+              type="email"
+              id="heroEmail"
+              placeholder="Enter work email"
+              required
+              autocomplete="off"
+            />
+            <button type="submit" class="primary-btn" id="submitBtn">
+              <span>Start Free Trial</span>
+              <div class="spinner hidden" id="btnSpinner"></div>
+            </button>
+          </form>
+          <p class="micro-text">No credit card required. 14-day free trial.</p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mockup-window">
+            <div class="mockup-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="mockup-body" id="pythonTerminal"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

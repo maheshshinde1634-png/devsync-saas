@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevSync | Portal</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body
+    style="
+      background: var(--bg-off-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <div
+      style="
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      "
+    >
+      <h2 style="margin-bottom: 20px; text-align: center">
+        Welcome to DevSync
+      </h2>
+
+      <h4 style="margin-bottom: 10px">Log In</h4>
+      <form action="/login" method="POST" style="margin-bottom: 30px">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <button type="submit" class="primary-btn" style="width: 100%">
+          Log In
+        </button>
+      </form>
+
+      <hr
+        style="margin-bottom: 20px; border: none; border-top: 1px solid #eee"
+      />
+
+      <h4 style="margin-bottom: 10px">Create Account</h4>
+      <form action="/signup" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="New Email"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="New Password"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <button type="submit" class="secondary-btn" style="width: 100%">
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevSync | Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body style="background: var(--bg-off-white)">
+    <div style="display: flex; min-height: 100vh">
+      <div
+        style="
+          width: 250px;
+          background: white;
+          padding: 30px;
+          border-right: 1px solid #ccc;
+        "
+      >
+        <h2 style="margin-bottom: 40px">DevSync.</h2>
+        <p
+          style="
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+          "
+        >
+          Overview
+        </p>
+        <a href="/logout" style="color: red; text-decoration: none">Log Out</a>
+      </div>
+      <div style="flex: 1; padding: 40px">
+        <div
+          style="
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+          "
+        >
+          <h1>Welcome back! 🎉</h1>
+          <p>Logged in securely as: {{ email }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

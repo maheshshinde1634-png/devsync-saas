@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | DevSync</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <style>
+      .checkout-container {
+        max-width: 500px;
+        margin: 120px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-color);
+      }
+      .checkout-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-main);
+        font-size: 0.9rem;
+      }
+      .form-control {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+      .form-control:focus {
+        border-color: var(--primary-color);
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body style="background: var(--bg-off-white)">
+    <nav id="navbar" class="scrolled">
+      <div class="nav-container">
+        <div class="logo">DevSync.</div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="checkout-container">
+      <div class="checkout-header">
+        <h2>Complete your upgrade</h2>
+        <p style="color: var(--text-muted)">DevSync Pro Developer - $29/mo</p>
+      </div>
+<!-- Updated to POST to our new Python route -->
+        <form action="/process_payment" method="POST">
+            <div class="form-group">
+                <label>Cardholder Name</label>
+                <!-- Added name="card_name" -->
+                <input type="text" name="card_name" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label>Card Number</label>
+                <!-- Added name="card_number" -->
+                <input type="text" name="card_number" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" required>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="text" class="form-control" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                    <label>CVC</label>
+                    <input type="password" class="form-control" placeholder="123" maxlength="3" required>
+                </div>
+            </div>
+            <button type="submit" class="primary-btn w-100" style="margin-top: 10px;">Pay $29.00 securely</button>
+        </form>
+          />
+        </div>
+        <div class="form-group">
+          <label>Card Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="0000 0000 0000 0000"
+            maxlength="19"
+            required
+          />
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Expiry Date</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="MM/YY"
+              maxlength="5"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>CVC</label>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="123"
+              maxlength="3"
+              required
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="primary-btn w-100"
+          style="margin-top: 10px"
+        >
+          Pay $29.00 securely
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
