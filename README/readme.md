@@ -47,7 +47,7 @@ The application utilizes a local MySQL server with the following structure:
 
 **1. Clone the repository:**
 \`\`\`bash
-git clone https://github.com/YourUsername/devsync-saas.git
+git clone https://github.com/maheshshinde1634/devsync-saas.git
 cd devsync-saas
 \`\`\`
 
