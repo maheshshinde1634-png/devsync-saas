@@ -71,4 +71,4 @@ python app.py
 
 ---
 
-_Developed by [Your Name] as a demonstration of production-ready full-stack engineering._
+_Developed by Shinde Mahesh as a demonstration of production-ready full-stack engineering._
